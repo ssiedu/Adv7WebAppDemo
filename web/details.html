@@ -2,10 +2,21 @@
     <body>
         <h3>Details Submission Form</h3>
         <hr>
-        <form action="TaxCalculator" method="post">
+        <form action="TaxCalculator" method="get">
             <pre>
             Income  <input type="text" name="t1"/>
+            Source  Serivce  <input type="radio" name="r1" value="service"/>
+                    Business <input type="radio" name="r1" value="business"/>
             Age     <input type="text" name="t2"/>
+            NRI     <input type="checkbox" name="c1" value="yes"/>
+            Assets  <select name="assets" multiple="multiple">
+                    <option>Flat</option>
+                    <option>Duplex</option>
+                    <option>Plot</option>
+                    <option>Car</option>
+                    <option>Gold</option>
+                    <option>Equity</option>
+                    </select>
                     <input type="submit"/>
             </pre>
         </form>

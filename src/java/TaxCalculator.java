@@ -8,12 +8,22 @@ import javax.servlet.http.HttpServletResponse;
 
 public class TaxCalculator extends HttpServlet {
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         //read the data coming from client
         
             String s1=req.getParameter("t1");
             String s2=req.getParameter("t2");
+            String s[]=req.getParameterValues("assets");
+            String s3=req.getParameter("c1");
+            int nriChrg=0;
+            if(s3!=null){
+                nriChrg=5000;
+            }
+            int surcharge=0;
+            if(s!=null){
+            surcharge=s.length*500;
+            }
         
         //process the data
         
@@ -37,7 +47,15 @@ public class TaxCalculator extends HttpServlet {
         out.println("Your Tax : "+tax);
         out.println("Your Rebate : "+rebate);
         out.println("Your Net Tax : "+net);
+        out.println("Your Surchage : "+surcharge);
+        out.println("NRI Charges : "+nriChrg);
         out.println("Pay Your Taxes Before 31st March.");
+        if(s!=null){
+        out.println("Assets Declared By You : ");
+        for(String tmp:s){
+            out.println(tmp);
+        }
+        }
         out.close();
     }
 }

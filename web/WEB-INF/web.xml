@@ -4,9 +4,17 @@
         <servlet-name>TaxCalculator</servlet-name>
         <servlet-class>TaxCalculator</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Demo</servlet-name>
+        <servlet-class>Demo</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>TaxCalculator</servlet-name>
         <url-pattern>/TaxCalculator</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Demo</servlet-name>
+        <url-pattern>/Demo</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
