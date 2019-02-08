@@ -43,19 +43,34 @@ public class TaxCalculator extends HttpServlet {
             net=tax-rebate;
         //provide the response
         PrintWriter out=resp.getWriter();
-        out.println("Thanks For Visiting Us.");
-        out.println("Your Tax : "+tax);
-        out.println("Your Rebate : "+rebate);
-        out.println("Your Net Tax : "+net);
-        out.println("Your Surchage : "+surcharge);
-        out.println("NRI Charges : "+nriChrg);
-        out.println("Pay Your Taxes Before 31st March.");
-        if(s!=null){
-        out.println("Assets Declared By You : ");
-        for(String tmp:s){
-            out.println(tmp);
-        }
-        }
+        
+        out.println("<html>");
+        out.println("<body>");
+        out.println("<h3>Thanks For Visiting Us.</h3>");
+        out.println("<table border=2>");
+        out.println("<tr>");
+        out.println("<td>Income</td>");
+        out.println("<td>"+income+"</td>");
+        out.println("</tr>");
+        out.println("<tr>");
+        out.println("<td>Age</td>");
+        out.println("<td>"+age+"</td>");
+        out.println("</tr>");
+        out.println("<tr>");
+        out.println("<td>Tax</td>");
+        out.println("<td>"+tax+"</td>");
+        out.println("</tr>");
+        out.println("<tr>");
+        out.println("<td>Rebate</td>");
+        out.println("<td>"+rebate+"</td>");
+        out.println("</tr>");
+        out.println("<tr>");
+        out.println("<td>Net</td>");
+        out.println("<td>"+net+"</td>");
+        out.println("</tr>");
+        out.println("</table>");
+        out.println("</body>");
+        out.println("</html>");
         out.close();
     }
 }

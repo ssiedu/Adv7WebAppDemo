@@ -8,6 +8,10 @@
         <servlet-name>Demo</servlet-name>
         <servlet-class>Demo</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>TaxRates</servlet-name>
+        <servlet-class>TaxRates</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>TaxCalculator</servlet-name>
         <url-pattern>/TaxCalculator</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>Demo</servlet-name>
         <url-pattern>/Demo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TaxRates</servlet-name>
+        <url-pattern>/TaxRates</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
