@@ -1,30 +1,22 @@
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class TaxRates extends HttpServlet {
+public class Guidelines extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-       response.setContentType("application/vnd.ms-excel");
-       //process
-       byte b[]=Utility.readData("E:\\info\\TaxRates.xlsx");
-       /*
-       FileInputStream fis=new FileInputStream("E:\\info\\TaxRates.xlsx");
-       int n=fis.available();
-       byte b[]=new byte[n];
-       fis.read(b);
-       fis.close();
-       */
-       //response
-       ServletOutputStream out=response.getOutputStream();
-       out.write(b);
-       out.close();
+        response.setContentType("application/msword");
+        //read a word file
+        byte b[]=Utility.readData("e:\\info\\Guidelines.docx");
+        //will send the contents to client
+        ServletOutputStream out=response.getOutputStream();
+        out.write(b);
+        out.close();
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
